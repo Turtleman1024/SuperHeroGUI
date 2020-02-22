@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="SuperHero_Duel_GUI.Fight" Collapsed="true">
+    <Position X="10.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAACAAAAAAAAAAAAKBgQAAIAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>Fight.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.Form1" Collapsed="true">
+    <Position X="12.25" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AKggAACAADAAAJAYAgCICEIOAQAAAICBEjIAggAAIAA=</HashCode>
+      <FileName>Form1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.GenerateFrames" Collapsed="true">
+    <Position X="14" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAABQAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>GenerateFrames.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.Hero">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGCAAABAAAACAAAAAAAAAAAICAAAAACAgAAiAAAAA=</HashCode>
+      <FileName>Hero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.MetaHuman">
+    <Position X="2.75" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGAAAABAAAACAAAAAAAAQAAIAAAAAAAAAAAiAAAAA=</HashCode>
+      <FileName>MetaHuman.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.Program" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.SuperHero" Collapsed="true">
+    <Position X="10.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGCAAABAAAACAAAAAAAAQAAICAAAAACAgAAiAABAA=</HashCode>
+      <FileName>SuperHero.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.Villian">
+    <Position X="5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAGCAAABAAAACAAAAAAAAAAAICAAAAACAgAAiAAAAA=</HashCode>
+      <FileName>Villian.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.Properties.Resources" Collapsed="true">
+    <Position X="12.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAEAAJAAAAAAEFFAAAAQgAAIAAAACAAAAAYIA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="SuperHero_Duel_GUI.Properties.Settings" Collapsed="true">
+    <Position X="14" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
