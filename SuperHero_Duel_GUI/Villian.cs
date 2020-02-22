@@ -10,7 +10,7 @@ namespace SuperHero_Duel_GUI
     /// A concrete Villian class that inherits the abstract MetaHuman class
     /// </summary>
     
-    class Villian : MetaHuman
+    public class Villian : MetaHuman
     {
         #region Attributes
         public double Health { get; set; } = 0;
@@ -42,7 +42,7 @@ namespace SuperHero_Duel_GUI
         /// <summary>
         /// A random number 
         /// </summary>
-        Random rnd = new Random();
+        private Random rnd = new Random();
         #endregion
 
         #region Getters and Setters

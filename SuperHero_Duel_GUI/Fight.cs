@@ -9,12 +9,12 @@ namespace SuperHero_Duel_GUI
     /// <summary>
     /// A object the represents a fighter
     /// </summary>
-    class Fight
+    public class Fight
     {
-        MetaHuman Fighter1;
-        MetaHuman Fighter2;
-        private readonly double Fighter1_Attack;
-        private readonly double Fighter2_Block;
+        private MetaHuman Fighter1;
+        private MetaHuman Fighter2;
+        private readonly double Fighter1Attack;
+        private readonly double Fighter2Block;
         private double Damage;
         private string Result;
 
@@ -23,13 +23,13 @@ namespace SuperHero_Duel_GUI
         /// </summary>
         /// <param name="fighter1">The aggressor</param>
         /// <param name="fighter2">The defender</param>
-        public Fight (ref MetaHuman fighter1, ref MetaHuman fighter2)
+        public Fight(ref MetaHuman fighter1, ref MetaHuman fighter2)
         {
             Fighter1 = fighter1;
             Fighter2 = fighter2;
 
-            Fighter1_Attack = fighter1.Attack();
-            Fighter2_Block = fighter2.Block();
+            Fighter1Attack = fighter1.Attack();
+            Fighter2Block = fighter2.Block();
 
             Damage = 0;
             Result = null;
@@ -41,7 +41,7 @@ namespace SuperHero_Duel_GUI
         public void StartBattle()
         {
             ///Calculater damage done
-            Damage = Attack(Fighter1_Attack, Fighter2_Block);
+            Damage = Attack(Fighter1Attack, Fighter2Block);
 
             ///Fighter2 takes damage
             Fighter2.SetHealth(Fighter2.GetHealth() - Damage);

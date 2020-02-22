@@ -9,10 +9,6 @@ namespace SuperHero_Duel_GUI
 {
     public partial class Form1 : Form
     {
-
-        //private SuperHero captain = new SuperHero("Captain America", 10, 12, 8);
-        //private SuperHero red_skull = new SuperHero("Red Skull", 12, 12, 6);
-
         private MetaHuman Captain = new Hero("Captain America", 10, 12, 8);
         private MetaHuman Thanos = new Villian("Thanos", 12, 12, 6);
 
@@ -26,19 +22,18 @@ namespace SuperHero_Duel_GUI
 
         private async void Attack_button_ClickAsync(object sender, EventArgs e)
         {
-            ///Set the attack Images to visable
-            await SetAttackImageAsync();
-
-            ///Show the health bars
-            UpdateHealthBar();
-
-            ///Display that the duel has begun
+            //Display that the duel has begun
             greeting_label.Text = "Fight!";
 
-            ///Clear the action label
+            //Clear the action label
             action_label.Text = "";
+            //Set the attack Images to visable
+            await SetAttackImageAsync();
 
-            ///Start the fight 
+            //Show the health bars
+            UpdateHealthBar();
+
+            //Start the fight 
             StartBattle(ref Captain, ref Thanos);            
         }
 
@@ -63,7 +58,7 @@ namespace SuperHero_Duel_GUI
         private void StartBattle(ref MetaHuman fighter1, ref MetaHuman fighter2)
         {
             
-            ///Check if they knocked each other out
+            //Check if they knocked each other out
             if (fighter1.GetHealth() <= 0 && fighter2.GetHealth() <= 0)
             {
                 ///Set the health of the heroes back to original, game on.
@@ -88,29 +83,29 @@ namespace SuperHero_Duel_GUI
                 return;
             }
             
-            ///Neither fighter has been knocked out, fight.
-            ///Fighter1 attacks first
+            //Neither fighter has been knocked out, fight.
+            //Fighter1 attacks first
             Battle(ref fighter1, ref fighter2);
             
 
-            ///Check if fighter2 has not been knocked out
+            //Check if fighter2 has not been knocked out
             if (fighter2.GetHealth() <= 0)
             {
-                ///Display message to the action label that red skull has been knocked out and captain is victorius.
+                //Display message to the action label that Thanos has been knocked out and captain is victorius.
                 action_label.Text += "\n\n" + fighter2.Name + " has been knocked out and " + fighter1.Name + " is Victorius\n";
 
-                ///Display message of the winner in greeting label
+                //Display message of the winner in greeting label
                 greeting_label.Text = fighter1.Name + " Wins!";
 
-                ///Set background image to the appropriate images.
+                //Set background image to the appropriate images.
                 HeroWinAnimation(hero_picture_box);
                 VillianLossAnimation(villian_picture_box);
 
-                ///Disable attack button
+                //Disable attack button
                 attack_button.Enabled = false;
                 attack_button.Visible = false;
 
-                ///Activate rest button
+                //Activate rest button
                 reset_button.Visible = true;
                 reset_button.Enabled = true;
 
@@ -118,27 +113,27 @@ namespace SuperHero_Duel_GUI
             }
 
 
-            ////Fighter2 attacks back
+            //Fighter2 attacks back
             Battle(ref fighter2, ref fighter1);
 
-            ///Check if fighter1 has not been knocked out
+            //Check if fighter1 has not been knocked out
             if (fighter1.GetHealth() <= 0)
             {
-                ///Display message to the action label that fighter1 has been knocked out and fighter2 is victorius.
+                //Display message to the action label that fighter1 has been knocked out and fighter2 is victorius.
                 action_label.Text += "\n\n" + fighter1.Name + " has been knocked out and " + fighter2.Name + " is Victorius\n";
 
-                ///Display message of the winner in greeting label
+                //Display message of the winner in greeting label
                 greeting_label.Text = fighter2.Name + " Wins!";
 
-                ///Set background image to the appropriate images. 
+                //Set background image to the appropriate images. 
                 HeroLossAnimation(hero_picture_box);
                 VillianWinAnimation(villian_picture_box);
 
-                ///Disable attack button
+                //Disable attack button
                 attack_button.Enabled = false;
                 attack_button.Visible = false;
 
-                ///Activate rest button
+                //Activate rest button
                 reset_button.Visible = true;
                 reset_button.Enabled = true;
 
@@ -152,16 +147,16 @@ namespace SuperHero_Duel_GUI
         /// </summary>
         private void Battle(ref MetaHuman fighter1, ref MetaHuman fighter2)
         {
-            ///Create a new battle 
+            //Create a new battle 
             Fight battle = new Fight(ref fighter1, ref fighter2);
 
-            /// Start a battle
+            // Start a battle
             battle.StartBattle();
 
-            ///Get the results and 
+            //Get the results and 
             action_label.Text += battle.GetResults();
 
-            ///Update the health bars
+            //Update the health bars
             UpdateHealthBar();
 
         }
@@ -362,13 +357,6 @@ namespace SuperHero_Duel_GUI
         /// <param name="currentBox">The current picture box</param>
         private void HeroWinAnimation(PictureBox currentBox)
         {
-            /*Image[] frames = GetFrames(Properties.Resources.captain_cartoon_victory);
-            for (int index = 0; index < frames.Length; index++)
-            {
-                currentBox.Image = frames[index];
-                await Task.Delay(60);
-
-            }*/
             currentBox.Image = Properties.Resources.captain_cartoon_victory;
             currentBox.Refresh();
             currentBox.Visible = true;
@@ -377,22 +365,22 @@ namespace SuperHero_Duel_GUI
 
         private void Reset_button_Click(object sender, EventArgs e)
         {
-            ///Set images back to standing images
+            //Set images back to standing images
             SetStandingImage();
 
-            ///Set the health of the MetaHumans back to original, game on.                
+            //Set the health of the MetaHumans back to original, game on.                
             Thanos.SetHealth(12);
             Captain.SetHealth(10);
             Captain.ZeroBattle();
             Thanos.ZeroBattle();
 
-            ///Update the health bars
+            //Update the health bars
             UpdateHealthBar();
 
-            ///Clear the attack label
+            //Clear the attack label
             action_label.Text = "";
 
-            ///Swap buttons
+            //Swap buttons
             attack_button.Enabled = true;
             attack_button.Visible = true;
             reset_button.Enabled = false;
@@ -414,32 +402,5 @@ namespace SuperHero_Duel_GUI
             hero_picture_box.Image = Properties.Resources.captain_cartoon_standing;
             villian_picture_box.Image = Properties.Resources.than_stand;
         }
-
-        /// <summary>
-        /// A method that extracts the frames of a gif and flips the image horizantally.
-        /// This method is untest.
-        /// </summary>
-        /// <param name="originalGif">The original gif</param>
-        /// <returns>Array of image frames</returns>
-        private Image[] GetFlippedFrames(Image originalGif)
-        {
-            ///Get the frame count of the gif
-            int numberOfFrames = originalGif.GetFrameCount(FrameDimension.Time);
-
-            ///New image array to store the extracted frames
-            Image[] frames = new Image[numberOfFrames];
-
-            ///Loop through the gif and store each frame in the frames array
-            for (int i = 0; i < numberOfFrames; i++)
-            {
-                originalGif.SelectActiveFrame(FrameDimension.Time, i);
-                frames[i] = new Bitmap(originalGif);
-                frames[i].RotateFlip(RotateFlipType.RotateNoneFlipX);
-                //frames[i] = ((Image)originalGif.Clone());
-            }
-
-            return frames;
-        }
-
     }
 }

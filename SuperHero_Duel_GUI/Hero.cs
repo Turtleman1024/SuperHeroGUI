@@ -10,24 +10,24 @@ namespace SuperHero_Duel_GUI
     /// A concrete Hero class that inherits the abstract MetaHuman class
     /// </summary>
 
-    class Hero : MetaHuman
+    public class Hero : MetaHuman
     {
         /// <summary>
         /// A concrete Hero class that inherits the abstract MetaHuman class
         /// </summary>
         /// 
         #region Attributes
-        public double Health { get; set; } = 0;
-        public double AttkMax { get; set; } = 0;
-        public double BlockMax { get; set; } = 0;
-        public int BattlesFought { get; set; } = 0;
+        private double Health { get; set; } = 0;
+        private double AttkMax { get; set; } = 0;
+        private double BlockMax { get; set; } = 0;
+        private int BattlesFought { get; set; } = 0;
         #endregion
 
         #region RandomNumbers
         /// <summary>
         /// A random number 
         /// </summary>
-        Random rnd = new Random();
+        private Random rnd = new Random();
         #endregion
 
         #region Getters and Setters

@@ -9,7 +9,7 @@ namespace SuperHero_Duel_GUI
     /// <summary>
     /// A abstract class that is not estanciated.
     /// </summary>
-    abstract class MetaHuman
+    public abstract class MetaHuman
     {
         #region Attributes
         /// <summary>
